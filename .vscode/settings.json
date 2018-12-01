@@ -1,0 +1,8 @@
+{
+  "editor.mouseWheelZoom": true,
+  "terminal.integrated.shell.windows": "C:/Windows/System32/cmd.exe",
+  "editor.fontFamily": "'Microsoft YaHei', Consolas, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.formatOnSave": true,
+  "C_Cpp.clang_format_fallbackStyle": "Google"
+}
