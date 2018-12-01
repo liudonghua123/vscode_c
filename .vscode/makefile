@@ -16,6 +16,6 @@ clean:
 	@echo building $<
 	$(CC) $(CFLAGS) $< -o bin/$@
 
-run_%: %.exe
-	@echo running bin/$<
-	$(PWD)/bin/$<
+run_%: bin/%.exe
+	@echo running $<
+	@$(PWD)/$<
