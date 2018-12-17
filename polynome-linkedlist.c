@@ -72,8 +72,10 @@ int delete (polynome_node_tp head, int exponent) {
  */
 void print(polynome_node_tp head) {
   polynome_node_tp current = head->next;
+  printf("%dx^%d", current->coefficient, current->exponent);
+  current = current->next;
   while (current) {
-    printf("%dx^%d ", current->coefficient, current->exponent);
+    printf("%+dx^%+d", current->coefficient, current->exponent);
     current = current->next;
   }
   printf("\n");
@@ -97,9 +99,13 @@ int calculate(polynome_node_tp head, int value) {
  */
 void toString(polynome_node_tp head, char* buffer) {
   polynome_node_tp current = head->next;
+  // 第一项的正数不用加'+'符号
+  sprintf(buffer + strlen(buffer), "%dx^%d", current->coefficient,
+          current->exponent);
+  current = current->next;
   while (current) {
     // https://stackoverflow.com/questions/2674312/how-to-append-strings-using-sprintf
-    sprintf(buffer + strlen(buffer), "%dx^%d ", current->coefficient,
+    sprintf(buffer + strlen(buffer), "%+dx^%+d", current->coefficient,
             current->exponent);
     current = current->next;
   }
