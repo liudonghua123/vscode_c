@@ -94,9 +94,10 @@
           </packing>
         </child>
         <child>
-          <object class="GtkEntry">
+          <object class="GtkEntry" id="ploynomeEntry">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+            <property name="editable">False</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -105,7 +106,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkEntry">
+          <object class="GtkEntry" id="valueEntry">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
           </object>
