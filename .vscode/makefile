@@ -12,9 +12,13 @@ clean:
 	@echo cleanning $(shell ls *.exe 2>/dev/null)
 	$(shell sh -c "rm *.exe 2>/dev/null")
 
+polynome: polynome.c polynome-linkedlist.c
+	@echo building $<
+	$(CC) $(CFLAGS) $^ -o bin/$@
+
 %: %.c
 	@echo building $<
-	$(CC) $(CFLAGS) $< -o bin/$@
+	$(CC) $(CFLAGS) $^ -o bin/$@
 
 run_%: bin/%.exe
 	@echo running $<
