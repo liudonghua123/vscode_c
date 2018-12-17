@@ -16,6 +16,9 @@ polynome: polynome.c polynome-linkedlist.c
 	@echo building $<
 	$(CC) $(CFLAGS) $^ -o bin/$@
 
+polynome-gtk: polynome-gtk.c polynome-linkedlist.c
+	$(CC) $(GTKFLAGS) -o bin/$@ $^ $(GTKLIBS) $(CFLAGS) 
+
 %: %.c
 	@echo building $<
 	$(CC) $(CFLAGS) $^ -o bin/$@
