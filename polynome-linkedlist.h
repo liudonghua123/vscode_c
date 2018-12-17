@@ -37,6 +37,11 @@ int delete (polynome_node_tp head, int exponent);
 void print(polynome_node_tp head);
 
 /**
+ * 获取多项式表达式
+ */
+void toString(polynome_node_tp head, char* buffer);
+
+/**
  *计算当前的多项式
  */
 int calculate(polynome_node_tp head, int value);

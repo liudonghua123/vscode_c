@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  *  初始化链表操作，成功返回1，失败返回0（可能内存分配错误）
@@ -89,4 +90,18 @@ int calculate(polynome_node_tp head, int value) {
     current = current->next;
   }
   return sum;
+}
+
+/**
+ * 获取多项式表达式
+ */
+void toString(polynome_node_tp head, char* buffer) {
+  polynome_node_tp current = head->next;
+  while (current) {
+    // https://stackoverflow.com/questions/2674312/how-to-append-strings-using-sprintf
+    sprintf(buffer + strlen(buffer), "%dx^%d ", current->coefficient,
+            current->exponent);
+    current = current->next;
+  }
+  sprintf(buffer + strlen(buffer), "\n");
 }
